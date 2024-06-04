@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    scrollbar-width: none;
+}
+
+html, body {
+  // disable over scroll behavior for mac os
+  overscroll-behavior-block: none;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+  overscroll-behavior-x: none;
+}
+
+button,
+input {
+  outline: none !important;
+}
+
+label, span, p, a, div {
+  color: var(--primaryColor);
+}
+
+input::placeholder {
+  font-weight: 300;
+  font-size: small;
+}
+
+img {
+  // disable drag image
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
