@@ -1,5 +1,5 @@
 import React, { ErrorInfo, PropsWithChildren } from 'react';
-import { IPropsWithChildren } from '@/typescript/type.components';
+import { IPropsWithChildren } from '@/types/type';
 
 export class ErrorBoundary extends React.Component<IPropsWithChildren, any> {
     constructor(props: PropsWithChildren<IPropsWithChildren>) {
@@ -8,7 +8,7 @@ export class ErrorBoundary extends React.Component<IPropsWithChildren, any> {
     }
     componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
         // when something is wrong. webpage must navigate to /wrong for changing UI
-        // secondary, continue task is call api to report error
+        // secondary, next task is call api to report error
         console.log(error, errorInfo);
         this.setState({hasError: true});
     }

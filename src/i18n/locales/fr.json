@@ -1,0 +1,27 @@
+{
+    "common": {
+        "short-name-app": "OGMA",
+        "email-address": "Email Address",
+        "password": "Password",
+        "invalid": {
+            "email": "Email invalide"
+        },
+        "required": {
+            "password": "Le mot de passe ne peut pas être vide",
+            "email": "L'email ne peut pas être vide"
+        },
+        "or": "Or",
+        "developing": "Cette fonctionnalité est en cours de développement"
+    },
+    "login": {
+        "connexion": "Connexion",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+        "forgot-password": "Mot de passe oublié?",
+        "registration": "Inscription",
+        "not-a-member": "Not a member?",
+        "with-fb": "Continue with Facebook",
+        "with-gg": "Continue with Google",
+        "success": "Connecté avec succès",
+        "fail": "Compte incorrect. Veuillez vérifier à nouveau"
+    }
+}
