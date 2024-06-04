@@ -1,0 +1,10 @@
+h1:where(.css-dev-only-do-not-override-1vu4h46).ant-typography, div:where(.css-dev-only-do-not-override-1vu4h46).ant-typography-h1, div:where(.css-dev-only-do-not-override-1vu4h46).ant-typography-h1>textarea, :where(.css-dev-only-do-not-override-1vu4h46).ant-typography h1 {
+    padding: 0;
+    margin-bottom: 0;
+    line-height: 1;
+}
+.ant-input::placeholder {
+    @include style-text(16px, 600);
+    color: #161629;
+    opacity: 0.5;
+}
