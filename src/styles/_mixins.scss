@@ -1,0 +1,37 @@
+@mixin bg-image($url, $bgColor: #302f2f) {
+    background-image: url($url);
+    background-repeat: no-repeat;
+    background-size: cover;
+    // ⚠️⚠️⚠️
+    // page has to set background color though it has background image
+    // page will display text well though browser cant load background image
+    background-color: $bgColor;
+}
+
+@mixin d-flex($justify: center, $align: center, $direction: row, $wrap: nowrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    $direction: $direction;
+    flex-wrap: $wrap;
+}
+
+@mixin set-width($min: unset, $width: unset, $max: unset) {
+    min-width: $min;
+    width: $width;
+    max-width: $max;
+}
+
+@mixin set-height($min: unset, $width: unset, $max: unset) {
+    min-height: $min;
+    height: $width;
+    max-height: $max;
+}
+
+@mixin style-text($size: unset, $weight: normal, $color: $WHITE_COLOR, $align: left, $decoration: unset) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    text-decoration: $decoration;
+    text-align: $align;
+}

@@ -62,6 +62,14 @@ export default ({ mode }: any) => {
         ]
       }
     })],
+    // config using scss with global scope
+    css: {
+      preprocessorOptions: {
+          scss: {
+              additionalData: '@import "./src/styles/index.scss";',
+          },
+      },
+    },
     resolve: {
       alias: [{ find: '@', replacement: path.resolve(process.cwd(), 'src') }],
     },

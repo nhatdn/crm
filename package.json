@@ -16,6 +16,7 @@
     "generate-pwa-assets": "pwa-assets-generator --preset minimal public/vite.svg"
   },
   "dependencies": {
+    "@react-oauth/google": "^0.12.1",
     "@tanstack/react-query": "^5.37.1",
     "@tanstack/react-query-devtools": "^5.35.1",
     "@types/react-svg": "^5.0.0",
@@ -72,5 +73,9 @@
     "vite": "^5.2.0",
     "vite-plugin-pwa": "^0.20.0",
     "vite-plugin-robots": "^1.0.5"
+  },
+  "engines": {
+    "npm": ">=10.2.3",
+    "node": ">=18.19.0"
   }
 }
