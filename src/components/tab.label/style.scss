@@ -1,0 +1,9 @@
+.tab-label {
+    @include d-flex(space-evenly);
+    @include style-text(12px, 400, #A9ABAD);
+    padding: 0 23px;
+    .label {
+        display: block;
+        margin-left: 10px;
+    }
+}

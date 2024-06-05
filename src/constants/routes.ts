@@ -1,6 +1,8 @@
 const ROUTES_PATH = {
   LOGIN: '/login',
-  CONTACT: '/'
+  FILTER: '/',
+  OFFLINE: '/offline',
+  NOT_FOUND: '*'
 }
 
 export default ROUTES_PATH

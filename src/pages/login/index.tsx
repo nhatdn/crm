@@ -1,14 +1,15 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Button, Form, Input, Typography, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { TokenResponse, useGoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
 
 import { apiLogin, apiLoginByGoogle } from '@/mocks/apis';
+import useGlobalStore from '@/stores/global';
 import { Icons } from '@/assets';
 import { TLogin } from '@/types/type';
-import CustomStorage from '@/helpers';
 import { ROUTES_PATH } from '@/constants';
+import { notLogged } from '@/hocs';
 import './style.scss';
 
 enum LOADING_TYPE {
@@ -18,28 +19,28 @@ enum LOADING_TYPE {
     FACEBOOK = 3
 }
 
-const Login: React.FC = () => {
+const Login: React.FC = notLogged(() => {
+    const { setAccount } = useGlobalStore();
     const [loading, setLoading] = useState<LOADING_TYPE>(LOADING_TYPE.NOT_LOADING);
     const navigate = useNavigate();
     const { t } = useTranslation();
     const [loginForm] = Form.useForm();
 
-    const storage = useMemo(() => new CustomStorage(), []);
 
     const handleLoginByForm = useCallback(async (payload: TLogin) => {
         setLoading(LOADING_TYPE.FORM);
         try {
             const response = await apiLogin(payload);
-            storage.setAccount(response);
+            setAccount(response);
             message.success(t('login.success'));
-            navigate(ROUTES_PATH.CONTACT);
+            navigate(ROUTES_PATH.FILTER);
         } catch (error) {
             console.log(error);
             message.error(t('login.fail'))
         } finally {
             setLoading(LOADING_TYPE.NOT_LOADING);
         }
-    }, [setLoading, navigate, t, storage]);
+    }, [setLoading, navigate, t, setAccount]);
 
     const onGoogleLoginSuccess = useCallback(async (data: TokenResponse) => {
         if (data.error) {
@@ -50,9 +51,9 @@ const Login: React.FC = () => {
             // it will return user data including access token
             try {
                 const response = await apiLoginByGoogle(data.access_token);
-                storage.setAccount(response);
+                setAccount(response);
                 message.success(t('login.success'));
-                navigate(ROUTES_PATH.CONTACT);
+                navigate(ROUTES_PATH.FILTER);
 
             } catch (error) {
                 console.log(error);
@@ -61,7 +62,7 @@ const Login: React.FC = () => {
                 setLoading(LOADING_TYPE.NOT_LOADING);
             }
         }
-    }, [t, navigate, setLoading, storage]);
+    }, [t, navigate, setLoading, setAccount]);
 
     const handleLoginByGoogle = useGoogleLogin({
         onSuccess: onGoogleLoginSuccess,
@@ -77,11 +78,11 @@ const Login: React.FC = () => {
 
     const handleFogotPassword = useCallback(() => {
         message.info(t('common.developing'));
-    },  [t]);
+    }, [t]);
 
     const handleRegister = useCallback(() => {
         message.info(t('common.developing'));
-    },  [t]);
+    }, [t]);
 
     return (
         <div className="login-page page">
@@ -185,6 +186,6 @@ const Login: React.FC = () => {
             <span className='light third'></span>
         </div>
     )
-}
+})
 
 export default Login;

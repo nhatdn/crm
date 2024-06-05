@@ -1,6 +1,9 @@
 import Auth from './auth'
+import Primary from './primary'
 
 const Layout = {
-  Auth
+  Auth,
+  Primary
 }
+
 export default Layout

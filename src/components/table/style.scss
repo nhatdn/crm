@@ -1,0 +1,130 @@
+.custom-table {
+    .ant-table-placeholder {
+        background-color: #17202E !important;
+    }
+
+    .ant-table {
+        &-thead {
+            height: 50px !important;
+
+            .ant-table-cell {
+                border-bottom: 0px;
+                padding: 8px 15px 0 52px !important;
+                position: relative;
+
+                &::after {
+                    content: "";
+                    height: 50%;
+                    width: 1px;
+                    background-color: #454D58;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                }
+
+                &:first-child,
+                &:last-child {
+                    &::after {
+                        width: 0px;
+                    }
+                }
+
+                .setting {
+                    cursor: pointer;
+
+                    &:hover path {
+                        stroke: $PRIMARY_COLOR;
+                    }
+                }
+            }
+        }
+
+        &-wrapper table {
+            border-radius: 0;
+        }
+
+        &-thead {
+            background-color: #17202E !important;
+        }
+
+        &-content {
+            max-height: calc(100vh - 332px);
+            height: 100%;
+            overflow: auto;
+            padding-bottom: 20px;
+        }
+
+    }
+
+    .ant-table-row {
+        .ant-table-cell {
+            border-right: 1px solid #454D58;
+            border-bottom-color: transparent;
+            border-top: 1px solid #454D58;
+            padding: 10px 16px;
+            @include style-text(12px, 400);
+            text-align: center;
+        }
+
+        &:hover {
+            .ant-table-cell {
+                border-color: transparent !important;
+            }
+
+            &+.ant-table-row {
+                .ant-table-cell {
+                    border-top-color: transparent !important;
+                }
+            }
+        }
+    }
+
+    .ant-table-row,
+    .ant-table-thead {
+        .ant-table-cell {
+
+            &::before {
+                display: none;
+            }
+
+            &:first-child,
+            &:last-child {
+                border-color: transparent !important;
+                padding-left: 0 !important;
+            }
+        }
+
+        :nth-last-child(2) {
+            border-right: none;
+
+            &::after {
+                width: 0px;
+            }
+        }
+
+        &:last-child {
+            .ant-table-cell {
+                border-bottom: 0 !important;
+            }
+        }
+
+        .ant-checkbox {
+            transform: scale(0.8);
+
+            &-checked {
+                .ant-checkbox-inner {
+                    background-color: $PRIMARY_COLOR !important;
+
+                    &:hover {
+                        background-color: $PRIMARY_COLOR !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .ant-pagination a,
+    .ant-pagination span {
+        color: white !important;
+    }
+}

@@ -1,2 +1,3 @@
-import { ErrorBoundary } from './error.boundary'
-export { ErrorBoundary }
+import ErrorBoundary from './error.boundary'
+import notLogged from './not.logged'
+export { ErrorBoundary, notLogged }

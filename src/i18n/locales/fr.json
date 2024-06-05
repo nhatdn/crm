@@ -11,7 +11,18 @@
             "email": "L'email ne peut pas être vide"
         },
         "or": "Or",
-        "developing": "Cette fonctionnalité est en cours de développement"
+        "developing": "Cette fonctionnalité est en cours de développement",
+        "something-is-wrong": "Une erreur s'est produite. Veuillez réessayer plus tard",
+        "back-to-home": "Retour à la page d'accueil",
+        "avatar": "Avatar",
+        "contact": "Contact",
+        "email": "Email",
+        "telephone": "Téléphone",
+        "opportunity": "Opportunity",
+        "responsable": "Responsable",
+        "etiquettes": "Étiquettes",
+        "logo": "Logo",
+        "loading": "loading"
     },
     "login": {
         "connexion": "Connexion",
@@ -23,5 +34,32 @@
         "with-gg": "Continue with Google",
         "success": "Connecté avec succès",
         "fail": "Compte incorrect. Veuillez vérifier à nouveau"
+    },
+    "not-found": {
+        "alt-image": "Image not found",
+        "description": "Le chemin auquel vous essayez d'accéder n'a pas été trouvé."
+    },
+    "offline": {
+        "description": "Votre appareil a perdu la connexion. Veuillez vérifier à nouveau"
+    },
+    "filter": {
+        "tab-name": {
+            "contact": "Contact",
+            "etiquette": "Etiquette",
+            "opportunity": "Opportunités",
+            "task": "Tâches"
+        },
+        "contact": {
+            "select-type-search": "Titre, contact, responsable...",
+            "everyone": "Tout le monde",
+            "not-filter": "Plus de filtre",
+            "btn-add": "Ajout de contact",
+            "name": "Nom du contact"
+        }
+    },
+    "layout": {
+        "primary": {
+            "placeholder-search": "Rechercher dans Metaforma"
+        }
     }
 }

@@ -1,0 +1,48 @@
+.filter-page {
+    .ant-tabs {
+        &-nav {
+            margin-bottom: 0 !important;
+
+            &::before {
+                border: 1px solid $DARK_BLUE_COLOR;
+            }
+
+            &-wrap {
+                height: 47px;
+            }
+        }
+
+        &-tab {
+            margin: 0 !important;
+        }
+
+        &-ink-bar {
+            height: 3px !important;
+            background-color: $PRIMARY_COLOR;
+        }
+
+        &-tab-active {
+            transition: 0.2s all;
+            background: rgba(221, 83, 19, 0.2);
+
+            .tab-label {
+                transition: 0.2s all;
+                color: $WHITE_COLOR;
+
+                svg path {
+                    stroke: $PRIMARY_COLOR;
+                    transition: 0.2s all;
+                }
+            }
+        }
+
+        &-nav-list {
+            margin-left: 13px;
+        }
+
+        &-content {
+            padding: 24px;
+        }
+    }
+  
+}

@@ -12,7 +12,7 @@
     display: flex;
     justify-content: $justify;
     align-items: $align;
-    $direction: $direction;
+    flex-direction: $direction;
     flex-wrap: $wrap;
 }
 
