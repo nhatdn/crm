@@ -16,7 +16,7 @@ const Header: React.FC = () => {
     <H className='header'>
       <Row className='header-container' justify={'space-between'} align={'middle'}>
         <Col span={8} className='header-left'>
-          <img src={Images.LogoCRM} alt='logo' />
+          <img src={Images.LogoCRM} alt={t('common.logo')} />
         </Col>
         <Col className='header-center' span={8}>
           <Search

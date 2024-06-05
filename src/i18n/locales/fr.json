@@ -20,7 +20,9 @@
         "telephone": "Téléphone",
         "opportunity": "Opportunity",
         "responsable": "Responsable",
-        "etiquettes": "Étiquettes"
+        "etiquettes": "Étiquettes",
+        "logo": "Logo",
+        "loading": "loading"
     },
     "login": {
         "connexion": "Connexion",
