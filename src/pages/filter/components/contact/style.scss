@@ -1,0 +1,146 @@
+.contact {
+    &-container {
+        @include d-flex(space-between);
+        margin-bottom: 48px;
+
+        .total-contact {
+            @include style-text(14px, 400);
+            margin-left: 11px;
+
+            .value {
+                @include style-text(14px, 700);
+            }
+        }
+        .tools-container {
+            @include d-flex();
+            .btn-setting {
+                margin-left: 10px;
+                border: 1px solid $DARK_BLUE_COLOR;
+                &:hover {
+                    svg path {
+                        stroke: $PRIMARY_COLOR;
+                    }
+                }
+            }
+            .ant-select {
+                margin-left: 10px;
+                &-selector {
+                    border: 1px solid $DARK_BLUE_COLOR !important;
+                    outline: none;
+                }
+                .ant-select-selection-search-input {
+                    &::placeholder {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    &-statistic {
+        @include d-flex(flex-start);
+    }
+
+    &-btn-add {
+        background-color: $PRIMARY_COLOR;
+        border-radius: 10px;
+
+        &:hover {
+            background-color: $PRIMARY_COLOR !important;
+        }
+    }
+
+    .name-container {
+        @include d-flex(center, flex-start);
+        flex-direction: column;
+
+        .name {
+            @include style-text(12px, 700);
+        }
+        .type {
+            @include style-text(10px, 400);
+        }
+    }
+
+    .actional-container {
+        @include d-flex(space-evenly);
+        width: 100%;
+        display: none;
+
+        .ant-btn-text {
+            padding: 8px;
+
+            &:hover {
+                svg path {
+                    stroke: $PRIMARY_COLOR;
+                }
+            }
+        }
+    }
+
+    .ant-table-row:hover {
+        .ant-table-cell:last-child {
+            padding: 0 !important;
+
+            .actional-container {
+                display: flex;
+            }
+        }
+    }
+
+    .email-container,
+    .telephone-container {
+        @include d-flex();
+        @include style-text(12px, 400);
+        cursor: pointer;
+
+        svg {
+            margin-right: 10px;
+        }
+
+        &:hover {
+            svg path {
+                stroke: $PRIMARY_COLOR;
+            }
+        }
+    }
+
+    .etiquettes-container {
+        @include d-flex();
+        .etiquette {
+            @include style-text(10px, 400);
+            margin: 0 4px;
+            border-radius: 20px;
+            padding: 3px 8px;
+            &.blue {
+                background-color: #0038FF;
+            }
+
+            &.red {
+                background-color: #FF001F;
+            }
+
+            &.dark {
+                background-color: #121A25;
+            }
+        }
+    }
+
+    .ant-table-row {
+        .ant-table-cell:nth-child(2) {
+            @include d-flex();
+        }
+    }
+    .responseble-container {
+        @include d-flex();
+        .mini-avt {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        .responsable {
+            @include style-text(12px, 400); 
+        }
+    }
+}

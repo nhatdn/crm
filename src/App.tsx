@@ -13,15 +13,17 @@ import {
 import { ErrorBoundary } from '@/hocs'
 import { theme } from '@/constants';
 import i18n from '@/i18n'
-import '@/App.css'
 import RenderRouter from '@/routes'
-import configs from './configs';
+import configs from '@/configs';
+import { ENV } from '@/types/enum';
+import { Error, Loading } from '@/components';
+import '@/App.css'
 
 const App: React.FC = () => {
 
   useInsertionEffect(() => {
     // production need to check
-    if (window == undefined) {
+    if (window && configs.ENV == ENV.PRODUCTION) {
       console.log = () => { }
       console.info = () => { }
       console.warn = () => { }
@@ -32,6 +34,7 @@ const App: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    // remove loading from index.html
     document.querySelector("body > .loading-container")?.remove();
   }, [])
 
@@ -39,9 +42,9 @@ const App: React.FC = () => {
 
   return (
     <StrictMode>
-      <ErrorBoundary fallbackError={'Have some error...'}>
+      <ErrorBoundary fallbackError={<Error />}>
         <I18nextProvider i18n={i18n}>
-          <Suspense fallback={<span />}>
+          <Suspense fallback={<Loading />}>
               <QueryClientProvider client={client}>
                 <BrowserRouter>
                   <GoogleOAuthProvider clientId={configs.GOOGLE_CLIEND_ID}>

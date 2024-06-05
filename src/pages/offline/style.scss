@@ -1,0 +1,8 @@
+.offline-page {
+    @include d-flex();
+    flex-direction: column;
+    .description {
+        @include style-text(18px, 500, black);
+        margin-bottom: 20px;
+    }
+}

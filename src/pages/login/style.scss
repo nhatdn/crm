@@ -46,6 +46,12 @@
             margin-bottom: 55px;
         }
 
+        .ant-input-outlined {
+            background-color: $WHITE_COLOR;
+            border: none;
+            outline: none;
+        }
+
         .child-title {
             @include style-text(30px, 700);
             margin-bottom: 5px;
