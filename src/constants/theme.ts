@@ -7,7 +7,9 @@ const theme: ThemeConfig = {
     colorFillTertiary: 'none',
     fontFamily: 'Noto Sans',
     controlHeightLG: 52,
-    colorTextPlaceholder: '#161629'
+    controlHeight: 40,
+    colorTextPlaceholder: '#161629',
+    colorBgContainer: '#17202E'
   },
   components: {
     Typography: {
@@ -27,6 +29,22 @@ const theme: ThemeConfig = {
       defaultShadow: 'none',
       primaryShadow: 'none',
       borderColorDisabled: 'none'
+    },
+    Layout: {
+      headerBg: '#17202E',
+      headerColor: '#ffffff',
+      headerHeight: 72,
+      siderBg: '#17202E',
+      headerPadding: '0 13px',
+      colorText: '#ffffff'
+    },
+    Table: {
+      bodySortBg: '#17202E',
+      expandIconBg: '#17202E',
+      rowHoverBg: '#243145',
+      headerBg: '#17202E',
+      headerColor: '#8B8B8B',
+      borderColor: '#454D58'
     }
   }
 }

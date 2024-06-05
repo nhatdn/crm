@@ -1,0 +1,9 @@
+.loading-container {
+    @include d-flex();
+    width: 100vw;
+    height: 100vh;
+    .loading-img {
+        // reuse CSS style from index.html
+        animation: animate 3s infinite linear;
+    }
+}

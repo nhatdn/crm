@@ -1,0 +1,77 @@
+.primary-layout {
+    max-width: 100vw;
+    width: 100%;
+    max-height: 100vh;
+    height: 100vh;
+    background-color: $DARK_COLOR;
+
+    &-content {
+        height: calc(100vh - 72px);
+        max-height: 100vh;
+
+        .ant-layout-sider-children {
+            @include d-flex(space-between);
+            flex-direction: column;
+        }
+
+        .ant-menu {
+            max-width: 100%;
+            background: transparent !important;
+            border-inline-end: none !important;
+
+            .ant-menu-item {
+                @include d-flex();
+                padding: 0;
+                height: 48px;
+                width: 48px;
+                margin: 0;
+                border-radius: 0;
+                position: relative;
+
+                &.ant-menu-item-selected {
+                    background: rgba(221, 83, 19, 0.2);
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 2px;
+                        height: 100%;
+                        background: $PRIMARY_COLOR;
+                        border-radius: 0;
+                    }
+
+                    svg path {
+                        stroke: $PRIMARY_COLOR;
+                    }
+                }
+            }
+
+            .ant-menu-title-content {
+                display: none;
+            }
+        }
+
+    }
+
+    .content {
+        border-top: 1px solid $DARK_BLUE_COLOR;
+        border-left: 1px solid $DARK_BLUE_COLOR;
+        background-color: $DARK_COLOR;
+
+    }
+
+    .infor-admin-container {
+        @include d-flex(flex-start, flex-start, column);
+        margin-left: 22px;
+
+        .fullname {
+            @include style-text(12px, 700);
+        }
+
+        .role {
+            @include style-text(10px, 400);
+        }
+    }
+}
