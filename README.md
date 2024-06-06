@@ -1,3 +1,7 @@
+Account login CRM:
+username: admin@gmail.com
+password: Abc@123
+
 # Guide setup to run local:
 
 Require tools:
